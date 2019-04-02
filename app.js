@@ -4,7 +4,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+var nunjucks = require('nunjucks');// 引入 nunjucks
 
 // 路由文件引用
 var indexRouter = require('./routes/index');
@@ -16,8 +16,14 @@ var app = express();
 // 视图模版设置
 // 设置视图模版目录，设置视图模版后缀为 jade 文件
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'jade');
+app.set('view engine', 'tpl');
+nunjucks.configure('views', {
+  autoescape: true,
+  express: app,
+  watch: true
+});
 
 // 使用 morgan 日志打印
 app.use(logger('dev'));
@@ -50,4 +56,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;$ 
+module.exports = app;
