@@ -23,8 +23,6 @@
           </ul>
         </nav>
       </div>
-
-
     <!-- 修改区 -->
       <div class="page-content">
 <!-- 主要修改区 -->
@@ -36,23 +34,25 @@
         </div>
     		<div class="form-section">
     		  <div class="form-item">
-    		    <input type="text" class="form-input" placeholder="姓名"/>
+    		    <input id="userName" type="text" class="form-input" placeholder="姓名"/>
     		  </div>
     		  <div class="form-item">
-    		    <input type="text" class="form-input" placeholder="电话"/>
+    		    <input id="userPhone" type="text" class="form-input" placeholder="电话"/>
     		  </div>
     		  <div class="form-item">
-    		    <input type="text" class="form-input" placeholder="密码"/>
+    		    <input id="userPassword" type="text" class="form-input" placeholder="密码"/>
     		  </div>
     		  <div class="form-item">
-    		    <select class="form-input">
+    		    <select id="userRole" class="form-input">
     		      <option value="0">请选择角色</option>
-    		      <option value="0">管理员</option>
-    		      <option value="0">销售</option>
+    		      <option value="1" {% if user.role == 1 %} selected {% endif %}>管理员</option>
+    		      <option value="2" {% if user.role == 2 %} selected {% endif %}>销售</option>
+             
     		    </select>
     		  </div>
     		  <div class="form-item">
-    		    <button class="form-button">保存</button>
+            <input id="userId"  type="text" hidden value="{{user.id}}" />
+    		    <button id="userSubmit" class="form-button">保存</button>
     		  </div>
     		</div>
 <!-- 主要修改区 -->
@@ -62,4 +62,9 @@
     <footer class="page-footer">Copyright © 2019 极客学院体验技术部出品</footer>
   </div>
 
+{% endblock %}
+
+{% block js %}
+<script src="/javascripts/jquery-3.3.1.min.js"></script>
+<script src="/javascripts/user_edit.js"></script>
 {% endblock %}

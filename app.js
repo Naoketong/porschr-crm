@@ -8,7 +8,8 @@ var nunjucks = require('nunjucks');// 引入 nunjucks
 
 // 路由文件引用
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+// var usersRouter = require('./routes/users');
+var apiRouter = require('./routes/api');//修改的
 
 // Express 引用实例化
 var app = express();
@@ -34,7 +35,8 @@ app.use(express.static(path.join(__dirname, 'public')));// 设置静态文件地
 
 // 使用配置好的路由
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// app.use('/users', usersRouter);
+app.use('/api', apiRouter);
 
 // 捕捉404错误
 // catch 404 and forward to error handler
