@@ -73,10 +73,7 @@ a{
 .content-management{
 	height: 80px;
 	padding:10px;
-	
 }
-
-
 .content-title{
 	float: left;
 	font-size: 20px;
@@ -99,8 +96,6 @@ a{
 	margin-left: 30px;
 }
 .form-item{
-	/*display: inline-block;*/
-	/*margin:0 auto;*/
 }
 .form-input{
 	width: 300px;
@@ -125,19 +120,7 @@ a{
 	border:none;
 	outline: none;
 	cursor: pointer;
-
 }
-
-
-
-
-
-
-
-
-
-
-
 .page-footer{
 	margin-top: 20px;
 	background-color: #191f22;

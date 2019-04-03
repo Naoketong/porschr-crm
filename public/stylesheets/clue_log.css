@@ -70,16 +70,11 @@ a{
 	margin-left: 20px;
 	background-color: #eff0f1;
 }
-
-
-
 .content-tail{
 	height: 80px;
 	padding:10px;
-	
 }
 .content-title{
-	/*float: left;*/
 	display: inline;
 	font-size: 20px;
 	color: #333;
@@ -98,12 +93,10 @@ a{
 	color: #333;
 	font-weight: 600;
 }
-
 .content-mainer{
 	margin-left: 50px;
 }
 .form-section{
-	/*background-color: red;*/
 }
 .form-item{
 	margin-bottom: 20px;
@@ -150,8 +143,6 @@ a{
 	font-size: 15px;
 	color: #333;
 }
-
-
 .page-footer{
 	margin-top: 20px;
 	background-color: #191f22;

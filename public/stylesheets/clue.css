@@ -70,16 +70,12 @@ a{
 	margin-left: 20px;
 	background-color: #eff0f1;
 }
-
-
-
 .content-thread{
 	height: 80px;
 	padding:10px;
-	
+
 }
 .content-title{
-	/*float: left;*/
 	display: inline;
 	font-size: 20px;
 	color: #333;
@@ -98,13 +94,11 @@ a{
 	color: #333;
 	font-weight: 600;
 }
-
 .content-table{
 	margin-left:30px;
 }
 .table-container{
 	width: 80%;
-	
 }
 .table-container tr{
 	height: 40px;
@@ -113,17 +107,6 @@ a{
 .table-container th{
 	width: 30px;
 }
-
-
-
-
-
-
-
-
-
-
-
 .page-footer{
 	margin-top: 20px;
 	background-color: #191f22;

@@ -73,7 +73,6 @@ a{
 .content-personnel{
 	height: 80px;
 	padding:10px;
-	
 }
 .content-title{
 	float: left;
@@ -98,7 +97,6 @@ a{
 }
 .table-container{
 	width: 80%;
-	
 }
 .table-container tr{
 	height: 40px;
@@ -107,17 +105,6 @@ a{
 .table-container th{
 	width: 30px;
 }
-
-
-
-
-
-
-
-
-
-
-
 .page-footer{
 	margin-top: 20px;
 	background-color: #191f22;
