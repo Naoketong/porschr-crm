@@ -4,35 +4,26 @@ const PAGE = {
   },
   bind: function() {
     $('#userSubmit').bind('click',this.handleSubmit);
-    $('#pahe-user-tuichu').bind('click',this.pahe);
-  },
-  pahe:function(){
-    location.href = '/admin/login'
   },
   handleSubmit: function() {
     let name = $('#userName').val();
     let phone = $('#userPhone').val();
-    let password = $('#userPassword').val();
-    let role = $('#userRole').val();
-    console.log(name,phone,password,role)
-    role = Number(role)
-
-    if(!name || !phone || !password || !role){
+    let utm = PAGE.getQuery('utm');
+    if(!name || !phone){
       alert('请输入必要参数');
       return
     }
 
     $.ajax({
-        url: '/api/user',
-        data: { name, phone, password, role },
+        url: '/api/clue',
+        data: { name, phone, utm },
         type: 'POST',
         beforeSend: function() {
           $("#userSubmit").attr("disabled",true);
         },
         success: function(data) {
           if(data.code === 200){
-            alert('新增成功！')
-            location.href = '/admin/user'
+            alert('申请成功！')
           }else{
             alert(data.message)
           }
@@ -44,7 +35,14 @@ const PAGE = {
           $("#userSubmit").attr("disabled",false);
         }
     })
-  }
+  },
+  getQuery:function(name) {
+    var result = location.search.match(new RegExp("[\?\&]" + name+ "=([^\&]+)","i"));
+    if(result == null || result.length < 1){
+        return "";
+    }
+    return result[1];
+  },
 }
 
 PAGE.init();

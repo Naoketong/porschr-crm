@@ -4,13 +4,15 @@ const PAGE = {
   },
   bind: function() {
     $('#userSubmit').bind('click',this.handleSubmit);
+    $('#pahe-user-tuichu').bind('click',this.pahe);
+  },
+   pahe:function(){
+    location.href = '/admin/login'
   },
   handleSubmit: function() {
     let strUrl = window.location.href;
     let arrUrl = strUrl.split("/");
     let id = arrUrl[arrUrl.length-2];
-    // let id = strPage.replace(/[^0-9]/ig,"");
-    let name = $('#userName').val();
     let phone = $('#userPhone').val();
     let password = $('#userPassword').val();
     let role = $('#userRole').val();
@@ -19,7 +21,6 @@ const PAGE = {
       alert('请输入必要参数a');
       return
     }
-    // console.log(id)
 
     $.ajax({
         url: '/api/user/' + id,

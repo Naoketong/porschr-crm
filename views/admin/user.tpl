@@ -8,7 +8,7 @@
     <header class="page-header">
       <img class="page-logo" src="https://files1.porsche.com/filestore/image/multimedia/none/875d5e3d-6763-47fe-bc52-809142d53274/svg/d4c766d7-7761-11e7-99c7-0019999cd470/porsche-svg.svg">
       <div class="page-text">Porsche 汽车管理销售系统</div>
-      <div class="pahe-user">林熙 <span class="pahe-user-tuichu">退出</span></div>
+      <div class="pahe-user">  <span id="pahe-user-tuichu" class="pahe-user-tuichu">退出</span></div>
     </header>
     <div class="page-body">
       <div class="page-aside">
@@ -60,4 +60,9 @@
     <footer class="page-footer">Copyright © 2019 极客学院体验技术部出品</footer>
   </div>
 
+{% endblock %}
+
+{% block js %}
+<script src="/javascripts/jquery-3.3.1.min.js"></script>
+<script src="/javascripts/user.js"></script>
 {% endblock %}

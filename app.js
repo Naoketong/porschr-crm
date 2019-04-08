@@ -5,6 +5,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var nunjucks = require('nunjucks');// 引入 nunjucks
+var filters = require('./filters/index')
 
 // 路由文件引用
 var indexRouter = require('./routes/index');
@@ -32,6 +33,12 @@ app.use(express.json());// 使用对 Post 来的数据 json 格式化
 app.use(express.urlencoded({ extended: false }));// 使用对 表单提交的数据 进行格式化
 app.use(cookieParser());// 使用 cookie
 app.use(express.static(path.join(__dirname, 'public')));// 设置静态文件地址路径为 public
+
+
+filters(app);
+app.use('/', indexRouter);
+app.use('/api', apiRouter);
+
 
 // 使用配置好的路由
 app.use('/', indexRouter);

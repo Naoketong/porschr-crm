@@ -4,34 +4,26 @@ const PAGE = {
   },
   bind: function() {
     $('#userSubmit').bind('click',this.handleSubmit);
-    $('#pahe-user-tuichu').bind('click',this.pahe);
-  },
-  pahe:function(){
-    location.href = '/admin/login'
   },
   handleSubmit: function() {
-    let name = $('#userName').val();
     let phone = $('#userPhone').val();
     let password = $('#userPassword').val();
-    let role = $('#userRole').val();
-    console.log(name,phone,password,role)
-    role = Number(role)
 
-    if(!name || !phone || !password || !role){
+    if(!phone || !password){
       alert('请输入必要参数');
       return
     }
 
     $.ajax({
-        url: '/api/user',
-        data: { name, phone, password, role },
+        url: '/api/login',
+        data: { password, phone },
         type: 'POST',
         beforeSend: function() {
           $("#userSubmit").attr("disabled",true);
         },
         success: function(data) {
           if(data.code === 200){
-            alert('新增成功！')
+            alert('登录成功！')
             location.href = '/admin/user'
           }else{
             alert(data.message)
